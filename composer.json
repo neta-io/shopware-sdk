@@ -1,5 +1,5 @@
 {
-    "name": "leadcommerce/shopware-sdk",
+    "name": "neta-io/shopware-sdk",
     "description": "A PHP SDK for the Shopware 5 REST API.",
     "license": "MIT",
     "authors": [
@@ -24,6 +24,9 @@
     "require-dev": {
         "satooshi/php-coveralls": "~1.0.0",
         "phpunit/phpunit": "~4.8.21"
+    },
+    "replace": {
+        "leadcommerce/shopware-sdk": "*"
     },
     "autoload": {
         "psr-0": {
