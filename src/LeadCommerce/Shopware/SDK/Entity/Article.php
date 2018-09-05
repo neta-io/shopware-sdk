@@ -710,7 +710,7 @@ class Article extends Base
     /**
      * @return ArticleDetail
      */
-    public function getMainDetail()
+    public function getMainDetail(): ArticleDetail
     {
         return $this->mainDetail;
     }
@@ -718,8 +718,24 @@ class Article extends Base
     /**
      * @param ArticleDetail $mainDetail
      */
-    public function setMainDetail($mainDetail)
+    public function setMainDetail(ArticleDetail $mainDetail)
     {
         $this->mainDetail = $mainDetail;
     }
+
+
+    /**
+     * @return array
+     */
+    public function getArrayCopy()
+    {
+        $arrayCopy = parent::getArrayCopy();
+        if (!empty($arrayCopy['taxId'])) {
+            $arrayCopy['tax'] = $arrayCopy['taxId'];
+            unset($arrayCopy['taxId']);
+        }
+        return $arrayCopy;
+    }
+
+
 }

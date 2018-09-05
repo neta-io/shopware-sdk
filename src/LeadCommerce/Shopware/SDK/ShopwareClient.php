@@ -104,7 +104,7 @@ class ShopwareClient
     public function request($uri, $method = 'GET', $body = null, $headers = [])
     {
         return $this->client->request($method, $uri, [
-            'json'        => $body,
+            'json' => $body,
             'headers'     => $headers,
             'auth'        => [
                 $this->username,
