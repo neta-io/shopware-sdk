@@ -63,6 +63,48 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     protected $customer;
 
     /**
+     * @var int
+     */
+    protected $orderStatusId;
+
+    /**
+     * @return int
+     */
+    public function getOrderStatusId()
+    {
+        return $this->orderStatusId;
+    }
+
+    /**
+     * @param int $orderStatusId
+     */
+    public function setOrderStatusId($orderStatusId)
+    {
+        $this->orderStatusId = $orderStatusId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPaymentStatusId()
+    {
+        return $this->paymentStatusId;
+    }
+
+    /**
+     * @param int $paymentStatusId
+     */
+    public function setPaymentStatusId($paymentStatusId)
+    {
+        $this->paymentStatusId = $paymentStatusId;
+    }
+
+    /**
+     * @var int
+     */
+    protected $paymentStatusId;
+
+    /**
      * @return int
      */
     public function getId()
