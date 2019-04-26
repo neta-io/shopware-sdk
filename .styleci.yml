@@ -7,10 +7,10 @@ risky: false
 linting: true
 
 enabled:
-  # - align_double_arrow
-  # - phpdoc_indent
-  # - strict # covered by risky: false
-  # - unalign_double_arrow
+# - align_double_arrow
+# - phpdoc_indent
+# - strict # covered by risky: false
+# - unalign_double_arrow
 
 disabled:
   - concat_without_spaces

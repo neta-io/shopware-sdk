@@ -14,11 +14,11 @@ checks:
     fix_line_ending: true
     fix_identation_4spaces: true
     fix_doc_comments: true
-
+  
   python:
     code_rating: true
     duplicate_code: true
-
+  
   ruby:
     code_rating: true
     duplicate_code: true
@@ -26,8 +26,7 @@ checks:
 build:
   tests:
     override:
-      -
-        command: 'phpunit -c phpunit.xml --coverage-clover=./build/logs/clover.xml'
+      - command: 'phpunit -c phpunit.xml --coverage-clover=./build/logs/clover.xml'
         coverage:
           file: './build/logs/clover.xml'
           format: 'php-clover'
