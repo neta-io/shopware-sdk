@@ -109,6 +109,7 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 
 ## TODO
 - [ ] More tests
+- [ ] StyleCI configuration
 - [ ] Generate docs
 - [ ] Fluent query builder
 
