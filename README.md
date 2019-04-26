@@ -1,24 +1,16 @@
-Neta Shopware SDK
+A PHP SDK for Shopware 5 REST API
 -----------------
 
-A PHP SDK for the Shopware 5 REST API.
-
-Code information:
-
+Code Information:  
 [![Build Status](https://travis-ci.org/neta-io/shopware-sdk.png?branch=master)](https://travis-ci.org/neta-io/shopware-sdk)
-[![Coverage Status](https://coveralls.io/repos/github/neta-io/shopware-sdk/badge.svg?branch=master)](https://coveralls.io/github/neta-io/shopware-sdk?branch=master)
 [![Code Coverage Scrutinizer](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/?branch=master)
-[![Code Climate](https://codeclimate.com/github/neta-io/shopware-sdk.png)](https://codeclimate.com/github/neta-io/shopware-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/?branch=master)
 [![StyleCI](https://styleci.io/repos/60611683/shield)](https://styleci.io/repos/60611683)
 
-Package information:
-
+Package Information:  
 [![Latest Stable Version](https://poser.pugx.org/neta-io/shopware-sdk/v/stable.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
 [![Total Downloads](https://poser.pugx.org/neta-io/shopware-sdk/downloads.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
-[![Latest Unstable Version](https://poser.pugx.org/neta-io/shopware-sdk/v/unstable.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
 [![License](https://poser.pugx.org/neta-io/shopware-sdk/license.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
-[![Dependency Status](https://gemnasium.com/neta-io/shopware-sdk.png)](https://gemnasium.com/neta-io/shopware-sdk)
 
 ## Installing
 
@@ -106,8 +98,7 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 
 [Here](https://github.com/neta-io/shopware-sdk/issues) is the issue tracker.
 
-## Contributing :-)
-
+## Contributing
 * Write some code
 * Write some tests
 * Make a pull request
@@ -117,10 +108,12 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 [MIT](MIT-LICENSE)
 
 ## TODO
+- [ ] More tests
+- [ ] Generate docs
+- [ ] Fluent query builder
 
-- [ ] Replace string class names with `::class` syntax
+## Credits
 
-## Authors
-
+This package has been forked from [LeadCommerceDE](https://github.com/LeadCommerceDE/shopware-sdk) originally authored by 
 - [Alexander Mahrt](https://github.com/cyruxx)
 - [Jochen Niebuhr](https://github.com/jniebuhr)
