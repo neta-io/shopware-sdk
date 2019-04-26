@@ -118,6 +118,10 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 
 ## Credits
 
-This package has been forked from [LeadCommerceDE](https://github.com/LeadCommerceDE/shopware-sdk) originally authored by 
+This package has been forked from:
+[portrino GmbH](https://github.com/portrino/shopware-sdk) 
+[leadcommerce](https://github.com/LeadCommerceDE/shopware-sdk) 
+
+Originally authored by 
 - [Alexander Mahrt](https://github.com/cyruxx)
 - [Jochen Niebuhr](https://github.com/jniebuhr)
