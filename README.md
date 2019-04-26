@@ -108,11 +108,10 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 
 ## License
 
-[MIT](MIT-LICENSE)
+[MIT](LICENSE)
 
 ## TODO
 - [ ] More tests
-- [ ] StyleCI configuration
 - [ ] Generate docs
 - [ ] Fluent query builder
 
