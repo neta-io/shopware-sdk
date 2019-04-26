@@ -4,7 +4,6 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - php: 7.0
     - php: 7.1
     - php: 7.2
     - php: 7.2
@@ -23,8 +22,4 @@ install:
 
 script:
   - ./vendor/bin/phpunit --version
-  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then vendor/bin/phpunit ; fi
-  - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then vendor/bin/phpunit --coverage-clover=./build/logs/clover.xml; fi
-
-after_script:
-  - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then ./vendor/bin/coveralls ; fi
+  - ./vendor/bin/phpunit

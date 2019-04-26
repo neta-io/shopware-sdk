@@ -12,6 +12,9 @@ Package Information:
 [![Total Downloads](https://poser.pugx.org/neta-io/shopware-sdk/downloads.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
 [![License](https://poser.pugx.org/neta-io/shopware-sdk/license.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
 
+## Requirement
+PHP >= 7.1
+
 ## Installing
 
 ```bash
