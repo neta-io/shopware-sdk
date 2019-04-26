@@ -19,11 +19,10 @@
   },
   "require": {
     "php": "^7.0",
-    "guzzlehttp/guzzle": "^6.2"
+    "guzzlehttp/guzzle": "^6.3"
   },
   "require-dev": {
-    "satooshi/php-coveralls": "~1.0.0",
-    "phpunit/phpunit": "~4.8.21"
+    "phpunit/phpunit": "^7.0"
   },
   "replace": {
     "leadcommerce/shopware-sdk": "*"

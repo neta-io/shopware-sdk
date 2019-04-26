@@ -2,10 +2,10 @@
 
 namespace Neta\Tests\Unit;
 
-use Guzzle\Tests\GuzzleTestCase;
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Handler\MockHandler;
 use Neta\Shopware\SDK\ShopwareClient;
 
 /**
@@ -14,7 +14,7 @@ use Neta\Shopware\SDK\ShopwareClient;
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
-abstract class BaseTest extends GuzzleTestCase
+abstract class BaseTest extends TestCase
 {
     /**
      * @var ShopwareClient
