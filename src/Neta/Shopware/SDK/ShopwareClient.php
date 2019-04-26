@@ -3,27 +3,27 @@
 namespace Neta\Shopware\SDK;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Handler\CurlHandler;
+use Neta\Shopware\SDK\Query\CacheQuery;
+use Neta\Shopware\SDK\Query\MediaQuery;
+use Neta\Shopware\SDK\Query\ShopsQuery;
+use Neta\Shopware\SDK\Query\OrdersQuery;
 use Neta\Shopware\SDK\Query\AddressQuery;
 use Neta\Shopware\SDK\Query\ArticleQuery;
-use Neta\Shopware\SDK\Query\CacheQuery;
-use Neta\Shopware\SDK\Query\CategoriesQuery;
-use Neta\Shopware\SDK\Query\CountriesQuery;
-use Neta\Shopware\SDK\Query\CustomerGroupsQuery;
-use Neta\Shopware\SDK\Query\CustomerQuery;
-use Neta\Shopware\SDK\Query\GenerateArticleImagesQuery;
-use Neta\Shopware\SDK\Query\ManufacturersQuery;
-use Neta\Shopware\SDK\Query\MediaQuery;
-use Neta\Shopware\SDK\Query\OrdersQuery;
-use Neta\Shopware\SDK\Query\PropertyGroupsQuery;
-use Neta\Shopware\SDK\Query\ShopsQuery;
-use Neta\Shopware\SDK\Query\TranslationsQuery;
-use Neta\Shopware\SDK\Query\VariantsQuery;
 use Neta\Shopware\SDK\Query\VersionQuery;
+use Neta\Shopware\SDK\Query\CustomerQuery;
+use Neta\Shopware\SDK\Query\VariantsQuery;
+use Neta\Shopware\SDK\Query\CountriesQuery;
+use Neta\Shopware\SDK\Query\CategoriesQuery;
+use Neta\Shopware\SDK\Query\TranslationsQuery;
+use Neta\Shopware\SDK\Query\ManufacturersQuery;
+use Neta\Shopware\SDK\Query\CustomerGroupsQuery;
+use Neta\Shopware\SDK\Query\PropertyGroupsQuery;
+use Neta\Shopware\SDK\Query\GenerateArticleImagesQuery;
 
 /**
- * Class ShopwareClient
+ * Class ShopwareClient.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>

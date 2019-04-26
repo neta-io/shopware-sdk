@@ -2,14 +2,14 @@
 
 namespace Neta\Tests\Unit;
 
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Handler\MockHandler;
 use Neta\Shopware\SDK\Entity\Article;
-use Neta\Shopware\SDK\Query\ArticleQuery;
 use Neta\Shopware\SDK\Util\Constants;
+use Neta\Shopware\SDK\Query\ArticleQuery;
 
 /**
- * Copyright 2016 LeadCommerce
+ * Copyright 2016 LeadCommerce.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
@@ -103,7 +103,6 @@ class ArticleQueryTest extends BaseTest
         $this->assertContains('filter[1][property]=number', $query);
         $this->assertContains('filter[1][expression]=>', $query);
         $this->assertContains('filter[1][value]=500', $query);
-
     }
 
     /**
@@ -184,7 +183,6 @@ class ArticleQueryTest extends BaseTest
             $entity->setEntityAttributes($attribute);
             $entities[] = $entity;
         }
-
 
         /** @var Article $updatedEntities */
         $updatedEntities = $this->getQuery()->updateBatch($entities);

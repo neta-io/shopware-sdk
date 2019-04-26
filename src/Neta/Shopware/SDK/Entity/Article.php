@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Entity
+ * Neta\Shopware\SDK\Entity.
  *
  * Copyright 2016 LeadCommerce
  *
@@ -11,7 +11,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Article
+ * Class Article.
  */
 class Article extends Base
 {
@@ -724,7 +724,6 @@ class Article extends Base
         $this->mainDetail = $mainDetail;
     }
 
-
     /**
      * @return array
      */
@@ -738,6 +737,4 @@ class Article extends Base
 
         return $arrayCopy;
     }
-
-
 }

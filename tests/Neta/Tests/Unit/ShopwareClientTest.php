@@ -3,12 +3,12 @@
 namespace Neta\Tests\Unit;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Handler\MockHandler;
 use Neta\Shopware\SDK\Query\AddressQuery;
 
 /**
- * Copyright 2016 LeadCommerce
+ * Copyright 2016 LeadCommerce.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>

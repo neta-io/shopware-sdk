@@ -5,7 +5,7 @@ namespace Neta\Shopware\SDK\Query;
 use Neta\Shopware\SDK\Util\Constants;
 
 /**
- * Class VersionQuery
+ * Class VersionQuery.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>

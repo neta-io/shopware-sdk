@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Util
+ * Neta\Shopware\SDK\Util.
  *
  * Copyright 2016 LeadCommerce
  *

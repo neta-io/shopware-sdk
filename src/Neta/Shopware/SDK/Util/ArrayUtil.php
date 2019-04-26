@@ -16,7 +16,7 @@ namespace Neta\Shopware\SDK\Util;
  */
 
 /**
- * Class with helper functions for array handling
+ * Class with helper functions for array handling.
  */
 class ArrayUtil
 {
@@ -77,7 +77,7 @@ class ArrayUtil
     }
 
     /**
-     * Checks if a given path exists in array
+     * Checks if a given path exists in array.
      *
      * Example:
      * - array:
@@ -108,7 +108,7 @@ class ArrayUtil
     }
 
     /**
-     * Returns a value by given path
+     * Returns a value by given path.
      *
      * Example
      * - array:
@@ -157,7 +157,7 @@ class ArrayUtil
     }
 
     /**
-     * Modifies or sets a new value in an array by given path
+     * Modifies or sets a new value in an array by given path.
      *
      * Example:
      * - array:
@@ -214,7 +214,7 @@ class ArrayUtil
     }
 
     /**
-     * Remove a sub part from an array specified by path
+     * Remove a sub part from an array specified by path.
      *
      * @param array  $array     Input array to manipulate
      * @param string $path      Path to remove from array
@@ -256,7 +256,7 @@ class ArrayUtil
     }
 
     /**
-     * Sorts an array recursively by key
+     * Sorts an array recursively by key.
      *
      * @param array $array Array to sort recursively by key
      * @return array Sorted array
@@ -274,7 +274,7 @@ class ArrayUtil
     }
 
     /**
-     * Sort an array of arrays by a given key using uasort
+     * Sort an array of arrays by a given key using uasort.
      *
      * @param array  $arrays    Array of arrays to sort
      * @param string $key       Key to sort after
@@ -581,7 +581,7 @@ class ArrayUtil
     public static function inArray(array $in_array, $item)
     {
         foreach ($in_array as $val) {
-            if (! is_array($val) && (string)$val === (string)$item) {
+            if (! is_array($val) && (string) $val === (string) $item) {
                 return true;
             }
         }
@@ -590,7 +590,7 @@ class ArrayUtil
     }
 
     /**
-     * Removes the value $cmpValue from the $array if found there. Returns the modified array
+     * Removes the value $cmpValue from the $array if found there. Returns the modified array.
      *
      * @param array  $array    Array containing the values
      * @param string $cmpValue Value to search for and if found remove array entry where found.
@@ -601,7 +601,7 @@ class ArrayUtil
         foreach ($array as $k => $v) {
             if (is_array($v)) {
                 $array[$k] = self::removeArrayEntryByValue($v, $cmpValue);
-            } elseif ((string)$v === (string)$cmpValue) {
+            } elseif ((string) $v === (string) $cmpValue) {
                 unset($array[$k]);
             }
         }
@@ -659,7 +659,7 @@ class ArrayUtil
     }
 
     /**
-     * Rename Array keys with a given mapping table
+     * Rename Array keys with a given mapping table.
      *
      * @param array $array        Array by reference which should be remapped
      * @param array $mappingTable Array with remap information, array/$oldKey => $newKey)
@@ -676,7 +676,7 @@ class ArrayUtil
 
     /**
      * Filters keys off from first array that also exist in second array. Comparison is done by keys.
-     * This method is a recursive version of php array_diff_assoc()
+     * This method is a recursive version of php array_diff_assoc().
      *
      * @param array $array1 Source array
      * @param array $array2 Reduce source array by this array
@@ -699,7 +699,7 @@ class ArrayUtil
     }
 
     /**
-     * Sorts an array by key recursive - uses natural sort order (aAbB-zZ)
+     * Sorts an array by key recursive - uses natural sort order (aAbB-zZ).
      *
      * @param array $array array to be sorted recursively, passed by reference
      * @return bool always TRUE
