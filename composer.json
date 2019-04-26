@@ -30,9 +30,9 @@
     },
     "autoload": {
         "psr-0": {
-            "LeadCommerce\\Shopware\\SDK\\": "src/",
-            "LeadCommerce\\Tests\\Unit\\": "tests/",
-            "LeadCommerce\\Tests\\Functional\\": "tests/"
+            "Neta\\Shopware\\SDK\\": "src/",
+            "Neta\\Tests\\Unit\\": "tests/",
+            "Neta\\Tests\\Functional\\": "tests/"
         }
     }
 }

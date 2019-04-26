@@ -82,7 +82,7 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
         'sort' => [
             [
                 'property' => 'name',
-                'direction' => \LeadCommerce\Shopware\SDK\Util\Constants::ORDER_ASC
+                'direction' => \Neta\Shopware\SDK\Util\Constants::ORDER_ASC
             ]
         ],
         'filter' => [
@@ -115,6 +115,10 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 ## License
 
 [MIT](MIT-LICENSE)
+
+## TODO
+
+- [ ] Replace string class names with `::class` syntax
 
 ## Authors
 
