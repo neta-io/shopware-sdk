@@ -695,7 +695,7 @@ class Article extends Base
             return $this;
         }
 
-        throw new RuntimeException("Invalid value provided for `attribute`");
+        throw new RuntimeException('Invalid value provided for `attribute`');
     }
 
     /**
@@ -742,7 +742,7 @@ class Article extends Base
             return $this;
         }
 
-        throw new RuntimeException("Invalid value provided for `mainDetail`");
+        throw new RuntimeException('Invalid value provided for `mainDetail`');
     }
 
     /**

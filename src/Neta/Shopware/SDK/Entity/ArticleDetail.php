@@ -475,7 +475,7 @@ class ArticleDetail extends Base
             return $this;
         }
 
-        throw new RuntimeException("Invalid value provided for `attribute`");
+        throw new RuntimeException('Invalid value provided for `attribute`');
     }
 
     /**

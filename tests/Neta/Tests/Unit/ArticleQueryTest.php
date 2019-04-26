@@ -304,6 +304,5 @@ class ArticleQueryTest extends BaseTest
         $this->assertInstanceOf(Article::class, $entity);
         $this->assertInstanceOf(ArticleDetail::class, $entity->getMainDetail());
         $this->assertInstanceOf(ArticleAttribute::class, $entity->getMainDetail()->getAttribute());
-
     }
 }
