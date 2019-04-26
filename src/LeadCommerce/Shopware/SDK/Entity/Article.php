@@ -4,9 +4,10 @@
  *
  * Copyright 2016 LeadCommerce
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
+
 namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**
@@ -730,10 +731,11 @@ class Article extends Base
     public function getArrayCopy()
     {
         $arrayCopy = parent::getArrayCopy();
-        if (!empty($arrayCopy['taxId'])) {
+        if (! empty($arrayCopy['taxId'])) {
             $arrayCopy['tax'] = $arrayCopy['taxId'];
             unset($arrayCopy['taxId']);
         }
+
         return $arrayCopy;
     }
 

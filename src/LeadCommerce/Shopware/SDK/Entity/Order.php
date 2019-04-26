@@ -1,4 +1,5 @@
 <?php
+
 namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**

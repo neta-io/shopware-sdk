@@ -5,7 +5,7 @@ namespace LeadCommerce\Shopware\SDK\Entity;
 /**
  * Class Base
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 class Base
@@ -46,7 +46,7 @@ class Base
         foreach ($array as $key => &$value) {
             if ($value instanceof Base) {
                 $array[$key] = $value->getArrayCopy();
-            } else if (is_array($value)) {
+            } elseif (is_array($value)) {
                 foreach ($value as $k => $v) {
                     if ($v instanceof Base) {
                         $value[$k] = $v->getArrayCopy();

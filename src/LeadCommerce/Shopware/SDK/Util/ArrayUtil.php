@@ -1,4 +1,5 @@
 <?php
+
 namespace LeadCommerce\Shopware\SDK\Util;
 
 /*
@@ -48,7 +49,7 @@ class ArrayUtil
      *
      * See the unit tests for more examples and expected behaviour
      *
-     * @param mixed $needle The value to search for
+     * @param mixed $needle   The value to search for
      * @param array $haystack The array in which to search
      * @return array $haystack array reduced matching $needle values
      */
@@ -63,13 +64,14 @@ class ArrayUtil
                 ($resultArray[$key] = $value);
             } elseif (is_array($value)) {
                 ($subArrayMatches = static::filterByValueRecursive($needle, $value));
-                if (!empty($subArrayMatches)) {
+                if (! empty($subArrayMatches)) {
                     ($resultArray[$key] = $subArrayMatches);
                 }
             }
         };
         // array_walk() is not affected by the internal pointers, no need to reset
         array_walk($haystack, $callback);
+
         // Pointers to result array are reset internally
         return $resultArray;
     }
@@ -87,8 +89,8 @@ class ArrayUtil
      * - path: 'foo/bar'
      * - return: TRUE
      *
-     * @param array $array Given array
-     * @param string $path Path to test, 'foo/bar/foobar'
+     * @param array  $array     Given array
+     * @param string $path      Path to test, 'foo/bar/foobar'
      * @param string $delimiter Delimiter for path, default /
      * @return bool TRUE if path exists in array
      */
@@ -101,6 +103,7 @@ class ArrayUtil
         } catch (\RuntimeException $e) {
             $isValid = false;
         }
+
         return $isValid;
     }
 
@@ -122,15 +125,15 @@ class ArrayUtil
      * If a path segments contains a delimiter character, the path segment
      * must be enclosed by " (double quote), see unit tests for details
      *
-     * @param array $array Input array
-     * @param string $path Path within the array
+     * @param array  $array     Input array
+     * @param string $path      Path within the array
      * @param string $delimiter Defined path delimiter, default /
      * @return mixed
      * @throws \RuntimeException
      */
     public static function getValueByPath(array $array, $path, $delimiter = '/')
     {
-        if (!is_string($path)) {
+        if (! is_string($path)) {
             throw new \RuntimeException('Path must be a string', 1477699595);
         }
         if ($path === '') {
@@ -149,6 +152,7 @@ class ArrayUtil
                 throw new \RuntimeException('Path does not exist in array', 1341397869);
             }
         }
+
         return $value;
     }
 
@@ -171,16 +175,16 @@ class ArrayUtil
      *   ),
      * );
      *
-     * @param array $array Input array to manipulate
-     * @param string $path Path in array to search for
-     * @param mixed $value Value to set at path location in array
+     * @param array  $array     Input array to manipulate
+     * @param string $path      Path in array to search for
+     * @param mixed  $value     Value to set at path location in array
      * @param string $delimiter Path delimiter
      * @return array Modified array
      * @throws \RuntimeException
      */
     public static function setValueByPath(array $array, $path, $value, $delimiter = '/')
     {
-        if (!is_string($path)) {
+        if (! is_string($path)) {
             throw new \RuntimeException('Path must be a string', 1341406402);
         }
         if ($path === '') {
@@ -197,7 +201,7 @@ class ArrayUtil
                 throw new \RuntimeException('Invalid path segment specified', 1341406846);
             }
             // Create cell if it doesn't exist
-            if (!array_key_exists($segment, $pointer)) {
+            if (! array_key_exists($segment, $pointer)) {
                 $pointer[$segment] = [];
             }
             // Set pointer to new cell
@@ -205,21 +209,22 @@ class ArrayUtil
         }
         // Set value of target cell
         $pointer = $value;
+
         return $array;
     }
 
     /**
      * Remove a sub part from an array specified by path
      *
-     * @param array $array Input array to manipulate
-     * @param string $path Path to remove from array
+     * @param array  $array     Input array to manipulate
+     * @param string $path      Path to remove from array
      * @param string $delimiter Path delimiter
      * @return array Modified array
      * @throws \RuntimeException
      */
     public static function removeByPath(array $array, $path, $delimiter = '/')
     {
-        if (!is_string($path)) {
+        if (! is_string($path)) {
             throw new \RuntimeException('Path must be a string', 1371757719);
         }
         if ($path === '') {
@@ -237,7 +242,7 @@ class ArrayUtil
             if ($segment === '') {
                 throw new \RuntimeException('Invalid path segment specified', 1371757720);
             }
-            if (!array_key_exists($segment, $pointer)) {
+            if (! array_key_exists($segment, $pointer)) {
                 throw new \RuntimeException('Path segment ' . $segment . ' does not exist in array', 1371758436);
             }
             if ($currentDepth === $pathDepth) {
@@ -246,6 +251,7 @@ class ArrayUtil
                 $pointer = &$pointer[$segment];
             }
         }
+
         return $array;
     }
 
@@ -259,19 +265,20 @@ class ArrayUtil
     {
         ksort($array);
         foreach ($array as $key => $value) {
-            if (is_array($value) && !empty($value)) {
+            if (is_array($value) && ! empty($value)) {
                 $array[$key] = self::sortByKeyRecursive($value);
             }
         }
+
         return $array;
     }
 
     /**
      * Sort an array of arrays by a given key using uasort
      *
-     * @param array $arrays Array of arrays to sort
-     * @param string $key Key to sort after
-     * @param bool $ascending Set to TRUE for ascending order, FALSE for descending order
+     * @param array  $arrays    Array of arrays to sort
+     * @param string $key       Key to sort after
+     * @param bool   $ascending Set to TRUE for ascending order, FALSE for descending order
      * @return array Array of sorted arrays
      * @throws \RuntimeException
      */
@@ -281,14 +288,16 @@ class ArrayUtil
             return $arrays;
         }
         $sortResult = uasort($arrays, function (array $a, array $b) use ($key, $ascending) {
-            if (!isset($a[$key]) || !isset($b[$key])) {
+            if (! isset($a[$key]) || ! isset($b[$key])) {
                 throw new \RuntimeException('The specified sorting key "' . $key . '" is not available in the given array.', 1373727309);
             }
+
             return ($ascending) ? strcasecmp($a[$key], $b[$key]) : strcasecmp($b[$key], $a[$key]);
         });
-        if (!$sortResult) {
+        if (! $sortResult) {
             throw new \RuntimeException('The function uasort() failed for unknown reasons.', 1373727329);
         }
+
         return $arrays;
     }
 
@@ -299,7 +308,7 @@ class ArrayUtil
      * See unit tests for detailed examples
      *
      * @param array $array Array to export
-     * @param int $level Internal level used for recursion, do *not* set from outside!
+     * @param int   $level Internal level used for recursion, do *not* set from outside!
      * @return string String representation of array
      * @throws \RuntimeException
      */
@@ -326,7 +335,7 @@ class ArrayUtil
                 $lines .= is_int($key) ? $key . ' => ' : '\'' . $key . '\' => ';
             }
             if (is_array($value)) {
-                if (!empty($value)) {
+                if (! empty($value)) {
                     $lines .= self::arrayExport($value, $level);
                 } else {
                     $lines .= '[],' . LF;
@@ -349,6 +358,7 @@ class ArrayUtil
             }
         }
         $lines .= str_repeat('    ', ($level - 1)) . ']' . ($level - 1 == 0 ? '' : ',' . LF);
+
         return $lines;
     }
 
@@ -381,7 +391,7 @@ class ArrayUtil
      *   'first.second' => 1
      * )
      *
-     * @param array $array The (relative) array to be converted
+     * @param array  $array  The (relative) array to be converted
      * @param string $prefix The (relative) prefix to be used (e.g. 'section.')
      * @return array
      */
@@ -391,12 +401,13 @@ class ArrayUtil
         foreach ($array as $key => $value) {
             // Ensure there is no trailling dot:
             $key = rtrim($key, '.');
-            if (!is_array($value)) {
+            if (! is_array($value)) {
                 $flatArray[$prefix . $key] = $value;
             } else {
                 $flatArray = array_merge($flatArray, self::flatten($value, $prefix . $key . '.'));
             }
         }
+
         return $flatArray;
     }
 
@@ -432,25 +443,26 @@ class ArrayUtil
      * )
      *
      * @param array $source Source array
-     * @param array $mask Array that has the keys which should be kept in the source array
+     * @param array $mask   Array that has the keys which should be kept in the source array
      * @return array Keys which are present in both arrays with values of the source array
      */
     public static function intersectRecursive(array $source, array $mask = [])
     {
         $intersection = [];
         foreach ($source as $key => $_) {
-            if (!array_key_exists($key, $mask)) {
+            if (! array_key_exists($key, $mask)) {
                 continue;
             }
             if (is_array($source[$key]) && is_array($mask[$key])) {
                 $value = self::intersectRecursive($source[$key], $mask[$key]);
-                if (!empty($value)) {
+                if (! empty($value)) {
                     $intersection[$key] = $value;
                 }
             } else {
                 $intersection[$key] = $source[$key];
             }
         }
+
         return $intersection;
     }
 
@@ -476,7 +488,7 @@ class ArrayUtil
      *  array(0 => 'Zero', 1 => 'One')
      *
      * @param array $array Input array
-     * @param int $level Internal level used for recursion, do *not* set from outside!
+     * @param int   $level Internal level used for recursion, do *not* set from outside!
      * @return array
      */
     public static function renumberKeysToAvoidLeapsIfKeysAreAllNumeric(array $array = [], $level = 0)
@@ -498,6 +510,7 @@ class ArrayUtil
                 $renumberedArray[$key] = self::renumberKeysToAvoidLeapsIfKeysAreAllNumeric($value, $level);
             }
         }
+
         return $renumberedArray;
     }
 
@@ -514,11 +527,11 @@ class ArrayUtil
      *  * Much more control over what is actually merged. ($addKeys, $includeEmptyValues)
      *  * Elements or the original array get overwritten if the same key is present in the overrule array.
      *
-     * @param array $original Original array. It will be *modified* by this method and contains the result afterwards!
-     * @param array $overrule Overrule array, overruling the original array
-     * @param bool $addKeys If set to FALSE, keys that are NOT found in $original will not be set. Thus only existing value can/will be overruled from overrule array.
-     * @param bool $includeEmptyValues If set, values from $overrule will overrule if they are empty or zero.
-     * @param bool $enableUnsetFeature If set, special values "__UNSET" can be used in the overrule array in order to unset array keys in the original array.
+     * @param array $original           Original array. It will be *modified* by this method and contains the result afterwards!
+     * @param array $overrule           Overrule array, overruling the original array
+     * @param bool  $addKeys            If set to FALSE, keys that are NOT found in $original will not be set. Thus only existing value can/will be overruled from overrule array.
+     * @param bool  $includeEmptyValues If set, values from $overrule will overrule if they are empty or zero.
+     * @param bool  $enableUnsetFeature If set, special values "__UNSET" can be used in the overrule array in order to unset array keys in the original array.
      * @return void
      */
     public static function mergeRecursiveWithOverrule(array &$original, array $overrule, $addKeys = true, $includeEmptyValues = true, $enableUnsetFeature = true)
@@ -533,8 +546,8 @@ class ArrayUtil
                     self::mergeRecursiveWithOverrule($original[$key], $overrule[$key], $addKeys, $includeEmptyValues, $enableUnsetFeature);
                 }
             } elseif (
-                ($addKeys || isset($original[$key])) &&
-                ($includeEmptyValues || $overrule[$key])
+                ($addKeys || isset($original[$key]))
+                && ($includeEmptyValues || $overrule[$key])
             ) {
                 $original[$key] = $overrule[$key];
             }
@@ -561,24 +574,25 @@ class ArrayUtil
      * | 0       | TRUE      | TRUE      | TRUE      |
      * +---------+-----------+-----------+-----------+
      *
-     * @param array $in_array One-dimensional array of items
-     * @param string $item Item to check for
+     * @param array  $in_array One-dimensional array of items
+     * @param string $item     Item to check for
      * @return bool TRUE if $item is in the one-dimensional array $in_array
      */
     public static function inArray(array $in_array, $item)
     {
         foreach ($in_array as $val) {
-            if (!is_array($val) && (string)$val === (string)$item) {
+            if (! is_array($val) && (string)$val === (string)$item) {
                 return true;
             }
         }
+
         return false;
     }
 
     /**
      * Removes the value $cmpValue from the $array if found there. Returns the modified array
      *
-     * @param array $array Array containing the values
+     * @param array  $array    Array containing the values
      * @param string $cmpValue Value to search for and if found remove array entry where found.
      * @return array Output array with entries removed if search string is found
      */
@@ -591,6 +605,7 @@ class ArrayUtil
                 unset($array[$k]);
             }
         }
+
         return $array;
     }
 
@@ -612,8 +627,8 @@ class ArrayUtil
      * array('bb' => array('third', 'fourth'),
      * )
      *
-     * @param array $array The initial array to be filtered/reduced
-     * @param mixed $keepItems The items which are allowed/kept in the array - accepts array or csv string
+     * @param array  $array        The initial array to be filtered/reduced
+     * @param mixed  $keepItems    The items which are allowed/kept in the array - accepts array or csv string
      * @param string $getValueFunc (optional) Callback function used to get the value to keep
      * @return array The filtered/reduced array with the kept items
      */
@@ -625,28 +640,29 @@ class ArrayUtil
                 $keepItems = GeneralUtility::trimExplode(',', $keepItems);
             }
             // Check if valueFunc can be executed:
-            if (!is_callable($getValueFunc)) {
+            if (! is_callable($getValueFunc)) {
                 $getValueFunc = null;
             }
             // Do the filtering:
-            if (is_array($keepItems) && !empty($keepItems)) {
+            if (is_array($keepItems) && ! empty($keepItems)) {
                 foreach ($array as $key => $value) {
                     // Get the value to compare by using the callback function:
                     $keepValue = isset($getValueFunc) ? call_user_func($getValueFunc, $value) : $value;
-                    if (!in_array($keepValue, $keepItems)) {
+                    if (! in_array($keepValue, $keepItems)) {
                         unset($array[$key]);
                     }
                 }
             }
         }
+
         return $array;
     }
 
     /**
      * Rename Array keys with a given mapping table
      *
-     * @param array	$array Array by reference which should be remapped
-     * @param array	$mappingTable Array with remap information, array/$oldKey => $newKey)
+     * @param array $array        Array by reference which should be remapped
+     * @param array $mappingTable Array with remap information, array/$oldKey => $newKey)
      */
     public static function remapArrayKeys(array &$array, array $mappingTable)
     {
@@ -670,7 +686,7 @@ class ArrayUtil
     {
         $differenceArray = [];
         foreach ($array1 as $key => $value) {
-            if (!array_key_exists($key, $array2)) {
+            if (! array_key_exists($key, $array2)) {
                 $differenceArray[$key] = $value;
             } elseif (is_array($value)) {
                 if (is_array($array2[$key])) {
@@ -678,6 +694,7 @@ class ArrayUtil
                 }
             }
         }
+
         return $differenceArray;
     }
 

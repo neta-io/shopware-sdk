@@ -11,7 +11,7 @@ use LeadCommerce\Shopware\SDK\ShopwareClient;
 /**
  * Copyright 2016 LeadCommerce
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 abstract class BaseTest extends GuzzleTestCase
@@ -31,7 +31,7 @@ abstract class BaseTest extends GuzzleTestCase
      */
     public function getMockClient()
     {
-        if (!$this->mockClient) {
+        if (! $this->mockClient) {
             $this->mockClient = new ShopwareClient('', 'test', 'test');
             $mock = $this->mockHandler;
             $handler = HandlerStack::create($mock);

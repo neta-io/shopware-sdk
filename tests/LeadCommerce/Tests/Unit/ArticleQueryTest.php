@@ -11,7 +11,7 @@ use LeadCommerce\Shopware\SDK\Util\Constants;
 /**
  * Copyright 2016 LeadCommerce
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 class ArticleQueryTest extends BaseTest
@@ -52,27 +52,27 @@ class ArticleQueryTest extends BaseTest
 
         $entities = $this->getQuery()->findByParams(
             [
-                'limit' => 10,
-                'start' => 20,
-                'sort' => [
+                'limit'  => 10,
+                'start'  => 20,
+                'sort'   => [
                     [
-                        'property' => 'name',
-                        'direction' => Constants::ORDER_ASC
-                    ]
+                        'property'  => 'name',
+                        'direction' => Constants::ORDER_ASC,
+                    ],
                 ],
                 'filter' => [
                     [
-                        'property' => 'name',
+                        'property'   => 'name',
                         'expression' => 'LIKE',
-                        'value' => '%' . $term . '%'
+                        'value'      => '%' . $term . '%',
                     ],
                     [
                         'operator'   => 'AND',
                         'property'   => 'number',
                         'expression' => '>',
-                        'value'      => '500'
-                    ]
-                ]
+                        'value'      => '500',
+                    ],
+                ],
             ]);
 
         $this->assertCount(2, $entities);
@@ -113,7 +113,7 @@ class ArticleQueryTest extends BaseTest
      */
     public function getQuery()
     {
-        if (!$this->query) {
+        if (! $this->query) {
             $this->query = new ArticleQuery($this->getMockClient());
         }
 
@@ -218,26 +218,26 @@ class ArticleQueryTest extends BaseTest
     {
         $jsonResponse = [
             'success' => true,
-            'data' => [
+            'data'    => [
                 [
-                    'success' => true,
+                    'success'   => true,
                     'operation' => 'delete',
-                    'data' => [
-                        'id' => 1,
+                    'data'      => [
+                        'id'           => 1,
                         'mainDetailId' => 1,
-                        'taxId' => 1
-                    ]
+                        'taxId'        => 1,
+                    ],
                 ],
                 [
-                    'success' => true,
+                    'success'   => true,
                     'operation' => 'delete',
-                    'data' => [
-                        'id' => 2,
+                    'data'      => [
+                        'id'           => 2,
                         'mainDetailId' => 2,
-                        'taxId' => 1
-                    ]
-                ]
-            ]
+                        'taxId'        => 1,
+                    ],
+                ],
+            ],
         ];
 
         $this->mockHandler = new MockHandler([

@@ -4,13 +4,15 @@
  *
  * Copyright 2016 LeadCommerce
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
+
 namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**
  * Class Media
+ *
  * @package LeadCommerce\Shopware\SDK\Entity
  */
 class Media extends Base

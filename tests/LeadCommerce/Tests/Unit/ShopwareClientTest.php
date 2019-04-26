@@ -10,7 +10,7 @@ use LeadCommerce\Shopware\SDK\Query\AddressQuery;
 /**
  * Copyright 2016 LeadCommerce
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 class ShopwareClientTest extends BaseTest

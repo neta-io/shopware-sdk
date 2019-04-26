@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Class Base
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 abstract class Base
@@ -129,7 +129,7 @@ abstract class Base
      */
     private function validateMethodAllowed($method)
     {
-        if (!in_array($method, $this->methodsAllowed)) {
+        if (! in_array($method, $this->methodsAllowed)) {
             throw new MethodNotAllowedException('Method ' . $method . ' is not allowed for ' . get_class($this));
         }
     }
@@ -137,7 +137,7 @@ abstract class Base
     /**
      * Fetch and build entity.
      *
-     * @param $uri
+     * @param        $uri
      * @param string $method
      * @param null   $body
      * @param array  $headers
@@ -240,11 +240,11 @@ abstract class Base
      * Creates an entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base $entity
-     * @param array $params
-     *
-     * @throws MethodNotAllowedException
+     * @param array                                  $params
      *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base
+     * @throws MethodNotAllowedException
+     *
      */
     public function create(\LeadCommerce\Shopware\SDK\Entity\Base $entity, $params = [])
     {
@@ -257,11 +257,11 @@ abstract class Base
      * Updates an entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base $entity
-     * @param array $params
-     *
-     * @throws MethodNotAllowedException
+     * @param array                                  $params
      *
      * @return array|mixed
+     * @throws MethodNotAllowedException
+     *
      */
     public function update(\LeadCommerce\Shopware\SDK\Entity\Base $entity, $params = [])
     {
@@ -274,7 +274,7 @@ abstract class Base
      * Updates a batch of this entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base[] $entities
-     * @param array $params
+     * @param array                                    $params
      *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base[]
      */
@@ -295,9 +295,9 @@ abstract class Base
      * @param mixed $id
      * @param array $params
      *
+     * @return array|mixed
      * @throws MethodNotAllowedException
      *
-     * @return array|mixed
      */
     public function delete($id, $params = [])
     {
@@ -312,9 +312,9 @@ abstract class Base
      * @param array $ids
      * @param array $params
      *
+     * @return array|mixed
      * @throws MethodNotAllowedException
      *
-     * @return array|mixed
      */
     public function deleteBatch(array $ids, $params = [])
     {
@@ -340,7 +340,7 @@ abstract class Base
     }
 
     /**
-     * @param $uri
+     * @param        $uri
      * @param string $method
      * @param null   $body
      * @param array  $headers
@@ -355,7 +355,7 @@ abstract class Base
     /**
      * Fetch as json object.
      *
-     * @param $uri
+     * @param        $uri
      * @param string $method
      * @param null   $body
      * @param array  $headers

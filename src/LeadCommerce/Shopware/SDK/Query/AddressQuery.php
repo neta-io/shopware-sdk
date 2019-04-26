@@ -7,7 +7,7 @@ use LeadCommerce\Shopware\SDK\Util\Constants;
 /**
  * Class AddressQuery
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
 class AddressQuery extends Base

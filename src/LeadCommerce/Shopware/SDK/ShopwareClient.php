@@ -25,7 +25,7 @@ use LeadCommerce\Shopware\SDK\Query\VersionQuery;
 /**
  * Class ShopwareClient
  *
- * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  *
  * @method AddressQuery getAddressQuery()
@@ -72,7 +72,7 @@ class ShopwareClient
     /**
      * ShopwareClient constructor.
      *
-     * @param $baseUrl
+     * @param      $baseUrl
      * @param null $username
      * @param null $apiKey
      */
@@ -94,7 +94,7 @@ class ShopwareClient
     /**
      * Does a request.
      *
-     * @param $uri
+     * @param        $uri
      * @param string $method
      * @param null   $body
      * @param array  $headers
@@ -104,9 +104,9 @@ class ShopwareClient
     public function request($uri, $method = 'GET', $body = null, $headers = [])
     {
         return $this->client->request($method, $uri, [
-            'json' => $body,
-            'headers'     => $headers,
-            'auth'        => [
+            'json'    => $body,
+            'headers' => $headers,
+            'auth'    => [
                 $this->username,
                 $this->apiKey,
                 'digest',
@@ -117,20 +117,20 @@ class ShopwareClient
     /**
      * Magically get the query classes.
      *
-     * @param $name
+     * @param       $name
      * @param array $arguments
      *
      * @return bool
      */
     public function __call($name, $arguments = [])
     {
-        if (!preg_match('/^get([a-z]+Query)$/i', $name, $matches)) {
+        if (! preg_match('/^get([a-z]+Query)$/i', $name, $matches)) {
             return false;
         }
 
         $className = __NAMESPACE__ . '\\Query\\' . $matches[1];
 
-        if (!class_exists($className)) {
+        if (! class_exists($className)) {
             return false;
         }
 

@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class ArticleTest
+ *
  * @package LeadCommerce\Tests\Unit
  */
 class ArticleTest extends TestCase
