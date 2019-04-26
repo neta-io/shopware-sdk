@@ -5,7 +5,7 @@ Code Information:
 [![Build Status](https://travis-ci.org/neta-io/shopware-sdk.png?branch=master)](https://travis-ci.org/neta-io/shopware-sdk)
 [![Code Coverage Scrutinizer](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/neta-io/shopware-sdk/?branch=master)
-[![StyleCI](https://styleci.io/repos/60611683/shield)](https://styleci.io/repos/60611683)
+[![StyleCI](https://styleci.io/repos/147497159/shield)](https://styleci.io/repos/147497159)
 
 Package Information:  
 [![Latest Stable Version](https://poser.pugx.org/neta-io/shopware-sdk/v/stable.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
