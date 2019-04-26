@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Entity
+ * Neta\Shopware\SDK\Entity.
  *
  * Copyright 2016 LeadCommerce
  *
@@ -11,9 +11,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Media
- *
- * @package Neta\Shopware\SDK\Entity
+ * Class Media.
  */
 class Media extends Base
 {
@@ -37,7 +35,6 @@ class Media extends Base
      * @var string
      */
     protected $path;
-
 
     /**
      * @return int

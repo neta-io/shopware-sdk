@@ -27,7 +27,7 @@ class CountriesQuery extends Base
 
     /**
      * Gets the query path to look for entities.
-     * E.G: 'variants' or 'articles'
+     * E.G: 'variants' or 'articles'.
      *
      * @return string
      */

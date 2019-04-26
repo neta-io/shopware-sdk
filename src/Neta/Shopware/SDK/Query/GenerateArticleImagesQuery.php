@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Query
+ * Neta\Shopware\SDK\Query.
  *
  * Copyright 2016 LeadCommerce
  *
@@ -33,7 +33,7 @@ class GenerateArticleImagesQuery extends Base
 
     /**
      * Gets the query path to look for entities.
-     * E.G: 'variants' or 'articles'
+     * E.G: 'variants' or 'articles'.
      *
      * @return string
      */

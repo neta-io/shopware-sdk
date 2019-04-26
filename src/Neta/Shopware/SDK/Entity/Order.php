@@ -3,9 +3,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Order
- *
- * @package Portrino\Neta\Shopware\SDK\Entity
+ * Class Order.
  */
 class Order extends \Neta\Shopware\SDK\Entity\Base
 {

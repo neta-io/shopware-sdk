@@ -5,7 +5,7 @@ namespace Neta\Shopware\SDK\Query;
 use Neta\Shopware\SDK\Util\Constants;
 
 /**
- * Class OrdersQuery
+ * Class OrdersQuery.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
@@ -31,7 +31,7 @@ class OrdersQuery extends Base
 
     /**
      * Gets the query path to look for entities.
-     * E.G: 'variants' or 'articles'
+     * E.G: 'variants' or 'articles'.
      *
      * @return string
      */

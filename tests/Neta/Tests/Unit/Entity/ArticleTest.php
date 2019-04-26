@@ -2,13 +2,11 @@
 
 namespace Neta\Tests\Unit;
 
-use Neta\Shopware\SDK\Entity\Article;
 use PHPUnit\Framework\TestCase;
+use Neta\Shopware\SDK\Entity\Article;
 
 /**
- * Class ArticleTest
- *
- * @package Neta\Tests\Unit
+ * Class ArticleTest.
  */
 class ArticleTest extends TestCase
 {

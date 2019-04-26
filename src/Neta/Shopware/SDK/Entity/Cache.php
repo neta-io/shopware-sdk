@@ -3,7 +3,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Cache
+ * Class Cache.
  */
 class Cache extends Base
 {

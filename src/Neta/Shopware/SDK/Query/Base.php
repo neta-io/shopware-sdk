@@ -2,14 +2,14 @@
 
 namespace Neta\Shopware\SDK\Query;
 
-use Neta\Shopware\SDK\Exception\MethodNotAllowedException;
 use Neta\Shopware\SDK\ShopwareClient;
 use Neta\Shopware\SDK\Util\ArrayUtil;
 use Neta\Shopware\SDK\Util\Constants;
 use Psr\Http\Message\ResponseInterface;
+use Neta\Shopware\SDK\Exception\MethodNotAllowedException;
 
 /**
- * Class Base
+ * Class Base.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
@@ -62,7 +62,7 @@ abstract class Base
 
     /**
      * Gets the query path to look for entities.
-     * E.G: 'variants' or 'articles'
+     * E.G: 'variants' or 'articles'.
      *
      * @return string
      */
@@ -81,7 +81,7 @@ abstract class Base
     }
 
     /**
-     * Finds entities by params
+     * Finds entities by params.
      *
      * e.g.:
      *
@@ -162,7 +162,7 @@ abstract class Base
     }
 
     /**
-     * Creates an entity
+     * Creates an entity.
      *
      * @param ResponseInterface $response
      *
@@ -244,7 +244,6 @@ abstract class Base
      *
      * @return \Neta\Shopware\SDK\Entity\Base
      * @throws MethodNotAllowedException
-     *
      */
     public function create(\Neta\Shopware\SDK\Entity\Base $entity, $params = [])
     {
@@ -261,7 +260,6 @@ abstract class Base
      *
      * @return array|mixed
      * @throws MethodNotAllowedException
-     *
      */
     public function update(\Neta\Shopware\SDK\Entity\Base $entity, $params = [])
     {
@@ -297,7 +295,6 @@ abstract class Base
      *
      * @return array|mixed
      * @throws MethodNotAllowedException
-     *
      */
     public function delete($id, $params = [])
     {
@@ -314,7 +311,6 @@ abstract class Base
      *
      * @return array|mixed
      * @throws MethodNotAllowedException
-     *
      */
     public function deleteBatch(array $ids, $params = [])
     {

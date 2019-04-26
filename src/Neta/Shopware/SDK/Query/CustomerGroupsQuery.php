@@ -5,7 +5,7 @@ namespace Neta\Shopware\SDK\Query;
 use Neta\Shopware\SDK\Util\Constants;
 
 /**
- * Class CustomerGroupsQuery
+ * Class CustomerGroupsQuery.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
@@ -33,7 +33,7 @@ class CustomerGroupsQuery extends Base
 
     /**
      * Gets the query path to look for entities.
-     * E.G: 'variants' or 'articles'
+     * E.G: 'variants' or 'articles'.
      *
      * @return string
      */

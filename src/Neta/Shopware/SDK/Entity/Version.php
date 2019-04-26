@@ -3,7 +3,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Version
+ * Class Version.
  */
 class Version extends Base
 {

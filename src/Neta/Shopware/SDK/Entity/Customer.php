@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Entity
+ * Neta\Shopware\SDK\Entity.
  *
  * Copyright 2016 LeadCommerce
  *
@@ -11,9 +11,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Customer
- *
- * @package Neta\Shopware\SDK\Entity
+ * Class Customer.
  */
 class Customer extends Base
 {

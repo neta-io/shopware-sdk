@@ -3,7 +3,7 @@
 namespace Neta\Shopware\SDK\Entity;
 
 /**
- * Class Base
+ * Class Base.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>

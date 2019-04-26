@@ -1,6 +1,6 @@
 <?php
 /**
- * Neta\Shopware\SDK\Exception
+ * Neta\Shopware\SDK\Exception.
  *
  * Copyright 2016 LeadCommerce
  *
@@ -11,7 +11,7 @@
 namespace Neta\Shopware\SDK\Exception;
 
 /**
- * Class MethodNotAllowedException
+ * Class MethodNotAllowedException.
  *
  * @author    Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
