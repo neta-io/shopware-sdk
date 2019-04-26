@@ -28,7 +28,7 @@ class CategoriesQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Category';
+        return \Neta\Shopware\SDK\Entity\Category::class;
     }
 
     /**

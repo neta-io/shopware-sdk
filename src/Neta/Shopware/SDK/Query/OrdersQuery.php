@@ -26,7 +26,7 @@ class OrdersQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Order';
+        return \Neta\Shopware\SDK\Entity\Order::class;
     }
 
     /**

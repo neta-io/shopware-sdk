@@ -28,7 +28,7 @@ class AddressQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Address';
+        return \Neta\Shopware\SDK\Entity\Address::class;
     }
 
     /**

@@ -28,7 +28,7 @@ class MediaQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Media';
+        return \Neta\Shopware\SDK\Entity\Media::class;
     }
 
     /**

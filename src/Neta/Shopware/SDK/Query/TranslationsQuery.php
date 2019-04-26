@@ -29,7 +29,7 @@ class TranslationsQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Translation';
+        return \Neta\Shopware\SDK\Entity\Translation::class;
     }
 
     /**

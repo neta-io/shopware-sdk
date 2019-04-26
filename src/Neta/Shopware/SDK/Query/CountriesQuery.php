@@ -22,7 +22,7 @@ class CountriesQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Country';
+        return \Neta\Shopware\SDK\Entity\Country::class;
     }
 
     /**

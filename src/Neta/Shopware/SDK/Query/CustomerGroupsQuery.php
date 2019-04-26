@@ -28,7 +28,7 @@ class CustomerGroupsQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\CustomerGroup';
+        return \Neta\Shopware\SDK\Entity\CustomerGroup::class;
     }
 
     /**

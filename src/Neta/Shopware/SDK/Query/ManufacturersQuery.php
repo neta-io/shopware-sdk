@@ -28,7 +28,7 @@ class ManufacturersQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Supplier';
+        return \Neta\Shopware\SDK\Entity\Supplier::class;
     }
 
     /**

@@ -15,7 +15,7 @@ class ArticleQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Article';
+        return \Neta\Shopware\SDK\Entity\Article::class;
     }
 
     /**

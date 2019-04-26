@@ -29,7 +29,7 @@ class VariantsQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\ArticleDetail';
+        return \Neta\Shopware\SDK\Entity\ArticleDetail::class;
     }
 
     /**

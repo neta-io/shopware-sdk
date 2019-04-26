@@ -28,7 +28,7 @@ class PropertyGroupsQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\PropertyGroup';
+        return \Neta\Shopware\SDK\Entity\PropertyGroup::class;
     }
 
     /**

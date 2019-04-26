@@ -28,7 +28,7 @@ class CustomerQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Customer';
+        return \Neta\Shopware\SDK\Entity\Customer::class;
     }
 
     /**

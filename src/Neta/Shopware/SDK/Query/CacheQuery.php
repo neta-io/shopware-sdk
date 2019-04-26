@@ -27,7 +27,7 @@ class CacheQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Cache';
+        return \Neta\Shopware\SDK\Entity\Cache::class;
     }
 
     /**

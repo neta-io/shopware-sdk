@@ -22,7 +22,7 @@ class ShopsQuery extends Base
      */
     protected function getClass()
     {
-        return 'Neta\\Shopware\\SDK\\Entity\\Shop';
+        return \Neta\Shopware\SDK\Entity\Shop::class;
     }
 
     /**
