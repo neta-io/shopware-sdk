@@ -7,6 +7,8 @@ use GuzzleHttp\Handler\MockHandler;
 use Neta\Shopware\SDK\Entity\Article;
 use Neta\Shopware\SDK\Util\Constants;
 use Neta\Shopware\SDK\Query\ArticleQuery;
+use Neta\Shopware\SDK\Entity\ArticleDetail;
+use Neta\Shopware\SDK\Entity\ArticleAttribute;
 
 /**
  * Copyright 2016 LeadCommerce.
@@ -245,5 +247,63 @@ class ArticleQueryTest extends BaseTest
         $entities = $this->getQuery()->deleteBatch([1, 2]);
 
         $this->assertCount(2, $entities);
+    }
+
+    /**
+     * @test
+     */
+    public function it_handles_nested_attribute_object()
+    {
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], file_get_contents(__DIR__ . '/files/get_article.json')),
+        ]);
+
+        /** @var Article $entity */
+        $entity = $this->getQuery()->findOne(1);
+        $this->assertInstanceOf(Article::class, $entity);
+        $this->assertInstanceOf(ArticleAttribute::class, $entity->getAttribute());
+    }
+
+    /**
+     * @test
+     */
+    public function it_handles_nested_main_detail_object()
+    {
+        $article = json_decode(file_get_contents(__DIR__ . '/files/get_article.json'), true);
+        $article['data']['mainDetail'] = ['id' => 'mainDetailID'];
+
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], json_encode($article)),
+        ]);
+
+        /** @var Article $entity */
+        $entity = $this->getQuery()->findOne(1);
+        $this->assertInstanceOf(Article::class, $entity);
+        $this->assertInstanceOf(ArticleDetail::class, $entity->getMainDetail());
+    }
+
+    /**
+     * @test
+     */
+    public function it_handles_nested_main_detail_attribute_object()
+    {
+        $article = json_decode(file_get_contents(__DIR__ . '/files/get_article.json'), true);
+        $article['data']['mainDetail'] = [
+            'id'        => 'mainDetailID',
+            'attribute' => [
+                'id' => 'mainDetailAttributeId',
+            ],
+        ];
+
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], json_encode($article)),
+        ]);
+
+        /** @var Article $entity */
+        $entity = $this->getQuery()->findOne(1);
+        $this->assertInstanceOf(Article::class, $entity);
+        $this->assertInstanceOf(ArticleDetail::class, $entity->getMainDetail());
+        $this->assertInstanceOf(ArticleAttribute::class, $entity->getMainDetail()->getAttribute());
+
     }
 }

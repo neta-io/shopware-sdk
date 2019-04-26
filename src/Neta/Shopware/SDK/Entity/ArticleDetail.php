@@ -10,6 +10,8 @@
 
 namespace Neta\Shopware\SDK\Entity;
 
+use RuntimeException;
+
 /**
  * Class ArticleDetail.
  */
@@ -449,23 +451,31 @@ class ArticleDetail extends Base
     }
 
     /**
-     * @return ArticleAttribute
+     * @return \Neta\Shopware\SDK\Entity\ArticleAttribute
      */
-    public function getAttributes()
+    public function getAttribute(): ?ArticleAttribute
     {
         return $this->attribute;
     }
 
     /**
-     * @param ArticleAttribute $attribute
+     * @param \Neta\Shopware\SDK\Entity\ArticleAttribute|array $value
      *
-     * @return ArticleDetail
+     * @return \Neta\Shopware\SDK\Entity\ArticleDetail
      */
-    public function setAttributes($attribute)
+    public function setAttribute($value)
     {
-        $this->attribute = $attribute;
+        if (is_array($value)) {
+            $value = (new ArticleAttribute)->setEntityAttributes($value);
+        }
 
-        return $this;
+        if ($value instanceof ArticleAttribute) {
+            $this->attribute = $value;
+
+            return $this;
+        }
+
+        throw new RuntimeException("Invalid value provided for `attribute`");
     }
 
     /**

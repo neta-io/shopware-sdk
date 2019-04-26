@@ -10,6 +10,8 @@
 
 namespace Neta\Shopware\SDK\Entity;
 
+use RuntimeException;
+
 /**
  * Class Article.
  */
@@ -669,23 +671,31 @@ class Article extends Base
     }
 
     /**
-     * @return array
+     * @return \Neta\Shopware\SDK\Entity\ArticleAttribute
      */
-    public function getAttributes()
+    public function getAttribute(): ?ArticleAttribute
     {
         return $this->attribute;
     }
 
     /**
-     * @param ArticleAttribute $attributes
+     * @param \Neta\Shopware\SDK\Entity\ArticleAttribute|array $value
      *
-     * @return Article
+     * @return \Neta\Shopware\SDK\Entity\Article
      */
-    public function setAttributes($attributes)
+    public function setAttribute($value)
     {
-        $this->attribute = $attributes;
+        if (is_array($value)) {
+            $value = (new ArticleAttribute)->setEntityAttributes($value);
+        }
 
-        return $this;
+        if ($value instanceof ArticleAttribute) {
+            $this->attribute = $value;
+
+            return $this;
+        }
+
+        throw new RuntimeException("Invalid value provided for `attribute`");
     }
 
     /**
@@ -709,19 +719,30 @@ class Article extends Base
     }
 
     /**
-     * @return ArticleDetail
+     * @return \Neta\Shopware\SDK\Entity\ArticleDetail
      */
-    public function getMainDetail(): ArticleDetail
+    public function getMainDetail(): ?ArticleDetail
     {
         return $this->mainDetail;
     }
 
     /**
-     * @param ArticleDetail $mainDetail
+     * @param \Neta\Shopware\SDK\Entity\ArticleDetail|array $value
+     * @return \Neta\Shopware\SDK\Entity\Article
      */
-    public function setMainDetail(ArticleDetail $mainDetail)
+    public function setMainDetail($value)
     {
-        $this->mainDetail = $mainDetail;
+        if (is_array($value)) {
+            $value = (new ArticleDetail)->setEntityAttributes($value);
+        }
+
+        if ($value instanceof ArticleDetail) {
+            $this->mainDetail = $value;
+
+            return $this;
+        }
+
+        throw new RuntimeException("Invalid value provided for `mainDetail`");
     }
 
     /**
