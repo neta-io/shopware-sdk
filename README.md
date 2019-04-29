@@ -8,9 +8,9 @@ Code Information:
 [![StyleCI](https://styleci.io/repos/147497159/shield)](https://styleci.io/repos/147497159)
 
 Package Information:  
-[![Latest Stable Version](https://poser.pugx.org/neta-io/shopware-sdk/v/stable.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
-[![Total Downloads](https://poser.pugx.org/neta-io/shopware-sdk/downloads.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
-[![License](https://poser.pugx.org/neta-io/shopware-sdk/license.svg)](https://packagist.org/packages/neta-io/shopware-sdk)
+[![Latest Stable Version](https://poser.pugx.org/neta-io/shopware-sdk/v/stable)](https://packagist.org/packages/neta-io/shopware-sdk)
+[![Total Downloads](https://poser.pugx.org/neta-io/shopware-sdk/downloads)](https://packagist.org/packages/neta-io/shopware-sdk)
+[![License](https://poser.pugx.org/neta-io/shopware-sdk/license)](https://packagist.org/packages/neta-io/shopware-sdk)
 
 ## Requirement
 PHP >= 7.1
@@ -114,6 +114,7 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 - [ ] More tests
 - [ ] Generate docs
 - [ ] Fluent query builder
+- [ ] out-of-the-box pagination
 
 ## Credits
 
