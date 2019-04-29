@@ -13,7 +13,7 @@ Package Information:
 [![License](https://poser.pugx.org/neta-io/shopware-sdk/license)](https://packagist.org/packages/neta-io/shopware-sdk)
 
 ## Requirement
-PHP >= 7.1
+PHP >= 7.2
 
 ## Installing
 

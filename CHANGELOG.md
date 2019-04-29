@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2019-04-29
 ### Added
 - `get` method on Base Entity class to support accessing entity's raw attributes.
+### Removed
+- Support for php 7.1
 
 ## [2.0.1] - 2019-04-26
 ### Fixed
