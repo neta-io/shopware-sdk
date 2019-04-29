@@ -18,20 +18,16 @@ checks:
 build:
   tests:
     override:
-      - command: 'phpunit -c phpunit.xml --coverage-clover=./build/logs/clover.xml'
+      - command: ./vendor/bin/phpunit
         coverage:
-          file: './build/logs/clover.xml'
-          format: 'php-clover'
+          file: ./build/logs/clover.xml
+          format: php-clover
 
 filter:
   paths: [src/*]
   excluded_paths: [bin/*, spec/*, tests/*, stub/*, coverage/*]
 
 tools:
-  external_code_coverage:
-    timeout: 1200
-    runs: 3
-  php_code_coverage: false
   php_code_sniffer:
     config:
       standard: PSR2
@@ -39,5 +35,5 @@ tools:
       paths: ['src']
   php_loc:
     enabled: true
-    excluded_dirs: [vendor, spec, stubs]
+    excluded_dirs: [vendor]
   php_sim: false
