@@ -307,7 +307,7 @@ class ArticleQueryTest extends BaseTest
     }
 
     /**
-     * TODO move to "Base Entity" unit test
+     * TODO move to "Base Entity" unit test.
      *
      * @test
      */
@@ -332,7 +332,7 @@ class ArticleQueryTest extends BaseTest
     }
 
     /**
-     * TODO move to "Base Entity" unit test
+     * TODO move to "Base Entity" unit test.
      *
      * @test
      */
