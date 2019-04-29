@@ -2,6 +2,9 @@
 
 namespace Neta\Shopware\SDK\Entity;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+
 /**
  * Class Base.
  *
@@ -16,6 +19,11 @@ class Base
     protected $id;
 
     /**
+     * @var array
+     */
+    protected $attributesRaw = [];
+
+    /**
      * Sets the attributes of this entity.
      *
      * @param array $attributes
@@ -24,6 +32,8 @@ class Base
      */
     public function setEntityAttributes(array $attributes)
     {
+        $this->attributesRaw = $attributes;
+
         foreach ($attributes as $attribute => $value) {
             $setter = 'set' . ucfirst($attribute);
             if (method_exists($this, $setter)) {
@@ -42,6 +52,8 @@ class Base
     public function getArrayCopy()
     {
         $array = get_object_vars($this);
+
+        unset($array['attributesRaw']);
 
         foreach ($array as $key => &$value) {
             if ($value instanceof Base) {
@@ -80,5 +92,20 @@ class Base
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public function get(string $key)
+    {
+        $method = 'get' . Str::camel(ucfirst($key));
+
+        if (method_exists($this, $method)) {
+            return $this->$method();
+        }
+
+        return Arr::get($this->attributesRaw, $key, null);
     }
 }

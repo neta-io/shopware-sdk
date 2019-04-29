@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2019-04-29
+### Added
+- `get` method on Base Entity class to support accessing entity's raw attributes.
+
+## [2.0.1] - 2019-04-26
+### Fixed
+- Bug with populating an article's nested entities.
+
 ## [2.0.0] - 2019-04-26
 ### Added
 - This CHANGELOG file.
@@ -17,5 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for php 7.0
 - Old documentation
 
-[Unreleased]: https://github.com/neta-io/shopware-sdk/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/neta-io/shopware-sdk/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/neta-io/shopware-sdk/compare/v2.0.1...v2.1.0
+[2.0.1]: https://github.com/neta-io/shopware-sdk/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/neta-io/shopware-sdk/compare/6b7e8195444984d7daf3d221e48f19daacd1c4c5...v2.0.0

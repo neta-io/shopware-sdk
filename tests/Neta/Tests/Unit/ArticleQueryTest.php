@@ -305,4 +305,49 @@ class ArticleQueryTest extends BaseTest
         $this->assertInstanceOf(ArticleDetail::class, $entity->getMainDetail());
         $this->assertInstanceOf(ArticleAttribute::class, $entity->getMainDetail()->getAttribute());
     }
+
+    /**
+     * TODO move to "Base Entity" unit test
+     *
+     * @test
+     */
+    public function it_can_get_nested_fields()
+    {
+        $article = json_decode(file_get_contents(__DIR__ . '/files/get_article.json'), true);
+        $article['data']['mainDetail'] = [
+            'id'        => 'mainDetailID',
+            'attribute' => [
+                'id' => 'mainDetailAttributeId',
+            ],
+        ];
+
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], json_encode($article)),
+        ]);
+
+        /** @var Article $entity */
+        $entity = $this->getQuery()->findOne(1);
+        $this->assertInstanceOf(Article::class, $entity);
+        $this->assertSame('mainDetailID', $entity->get('mainDetail.id'));
+    }
+
+    /**
+     * TODO move to "Base Entity" unit test
+     *
+     * @test
+     */
+    public function it_can_get_extra_custom_fields()
+    {
+        $article = json_decode(file_get_contents(__DIR__ . '/files/get_article.json'), true);
+        $article['data']['customField'] = 'foo';
+
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], json_encode($article)),
+        ]);
+
+        /** @var Article $entity */
+        $entity = $this->getQuery()->findOne(1);
+        $this->assertInstanceOf(Article::class, $entity);
+        $this->assertSame('foo', $entity->get('customField'));
+    }
 }

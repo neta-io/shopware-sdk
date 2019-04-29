@@ -43,6 +43,10 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
     
     // Fetch one article by id
     $article = $client->getArticleQuery()->findOne(1);
+    $article->getName();
+    $article->getDescription();
+    $article->get('mainDetail.id'); // Nested fields
+    $article->get('customField');
     
     // Create an article
     $article = new Article();
