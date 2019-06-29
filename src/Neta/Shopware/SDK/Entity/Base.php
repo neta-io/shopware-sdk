@@ -108,4 +108,12 @@ class Base
 
         return Arr::get($this->attributesRaw, $key, null);
     }
+
+    /**
+     * @return array
+     */
+    public function raw()
+    {
+        return $this->attributesRaw;
+    }
 }

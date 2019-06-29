@@ -119,6 +119,9 @@ See [API Docs](http://neta-io.github.io/shopware-sdk/)
 - [ ] Generate docs
 - [ ] Fluent query builder
 - [ ] out-of-the-box pagination
+- [ ] Bugs
+    - [ ] apiUrl: http://example/api doesn't work. It must have a trailing slash in order to work.
+    - [ ] Invalid response doesn't throw an exception. instead `Symfony\Component\Debug\Exception\FatalThrowableError  : Call to a member function getId() on array`
 
 ## Credits
 
