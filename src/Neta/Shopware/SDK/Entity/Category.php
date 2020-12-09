@@ -23,6 +23,10 @@ class Category extends Base
      * @var string
      */
     protected $name;
+    /**
+     * @var int
+     */
+    protected $parentId;
 
     /**
      * @return int
@@ -63,4 +67,25 @@ class Category extends Base
 
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
+
+    /**
+     * @param int $parentId
+     *
+     * @return Category
+     */
+    public function setParentId($parentId)
+    {
+        $this->parentId = $parentId;
+
+        return $this;
+    }
+
 }
