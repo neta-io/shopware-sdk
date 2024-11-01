@@ -1,0 +1,40 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# More details are here: https://help.github.com/articles/about-codeowners/
+
+# The '*' pattern is global owners.
+
+# Order is important. The last matching pattern has the most precedence.
+# The folders are ordered as follows:
+
+# In each subsection folders are ordered first by depth, then alphabetically.
+# This should make it easy to add new rules without breaking existing ones.
+
+#
+# Neta-io
+#
+
+# Global rule:
+*   @neta-io/developers
+
+# DevOps Rules
+.github             @neta-io/devops
+Jenkinsfile         @neta-io/devops
+docker-compose.yml  @neta-io/devops
+initialize.sh       @neta-io/devops
+
+#
+# Delica-digital
+#
+
+# If the repository belongs to the delica-digital GitHub organisation, please uncomment below and remove the neta-io entries above.
+
+# Global rule:
+# *   @delica-digital/developers
+
+# DevOps Rules
+# .github             @delica-digital/devops
+# Jenkinsfile         @delica-digital/devops
+# docker-compose.yml  @delica-digital/devops
+# initialize.sh       @delica-digital/devops

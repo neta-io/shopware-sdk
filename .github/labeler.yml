@@ -1,0 +1,48 @@
+automerge-squash:
+  - head-branch:
+      - "issue/*"
+      - "fix/*"
+      - "bugfix/*"
+      - "hotfix/*"
+      - "bug/*"
+      - "problem/*"
+      - "epic/*"
+      - "task/*"
+      - "subtask/*"
+      - "story/*"
+      - "feature/*"
+      - "defect/*"
+      - "dependabot/*"
+      - "revert*"
+
+bug:
+  - head-branch:
+      - "issue/*"
+      - "fix/*"
+      - "bugfix/*"
+      - "bug/*"
+      - "problem/*"
+      - "hotfix/*"
+      - "defect/*"
+
+devops:
+  - head-branch:
+      - "devops/*"
+
+epic:
+  - head-branch:
+      - "epic/*"
+
+feature:
+  - head-branch:
+      - "story/*"
+      - "feature/*"
+
+task:
+  - head-branch:
+      - "task/*"
+      - "subtask/*"
+
+update:
+  - head-branch:
+      - "dependabot/*"
