@@ -1,0 +1,59 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - assigned
+      - edited
+      - labeled
+      - opened
+      - reopened
+      - synchronize
+      - unlabeled
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
+  pull-requests: write
+  repository-projects: read
+  security-events: write
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  setup-pr:
+    uses: neta-io/github-actions-workflows/.github/workflows/setup-pr.yml@master
+    secrets:
+      GH_TOKEN: ${{ secrets.NETA_CI_TOKEN }}
+
+  php-linter:
+    uses: neta-io/github-actions-workflows/.github/workflows/php-linter.yml@master
+    needs:
+      - setup-pr
+    secrets:
+      GH_TOKEN: ${{ secrets.NETA_CI_TOKEN }}
+
+  trufflehog:
+    uses: neta-io/github-actions-workflows/.github/workflows/trufflehog.yml@master
+    needs:
+      - setup-pr
+    with:
+      EXTRA_ARGS: --only-verified
+
+  trivy:
+    if: contains(github.event.pull_request.labels.*.name, 'trivy')
+    uses: neta-io/github-actions-workflows/.github/workflows/trivy.yml@master
+    needs:
+      - setup-pr
+    with:
+      EXIT_CODE: 1
+      SCAN_TYPE: fs
+      SEVERITY: "CRITICAL,HIGH"
