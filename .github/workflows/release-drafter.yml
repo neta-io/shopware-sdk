@@ -1,0 +1,22 @@
+name: Release Drafter
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release-drafter:
+    uses: neta-io/github-actions-workflows/.github/workflows/release-drafter.yml@master
+    secrets:
+      GH_TOKEN: ${{ secrets.NETA_CI_TOKEN }}
