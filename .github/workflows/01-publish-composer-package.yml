@@ -26,3 +26,4 @@ jobs:
     uses: neta-io/github-actions-workflows/.github/workflows/sw-publish-package.yml@master
     secrets:
       ARTIFACTORY_API_KEY: ${{ secrets.ARTIFACTORY_API_KEY }}
+      MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_DEPLOYMENT_WEBHOOK_URL }}
